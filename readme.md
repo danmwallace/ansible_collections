@@ -18,7 +18,6 @@ them.
 | [`danmwallace.linux`](https://github.com/danmwallace/ansible-collection-linux) | 1.1.0 | Galaxy | `cloudflare_ssl`, `cockpit`, `restic_restore`, `raspberry_pi_network_toolkit` |
 | [`danmwallace.fedora`](https://github.com/danmwallace/ansible-collection-fedora) | 1.0.1 | Galaxy | `hyprland` |
 | [`danmwallace.azure`](https://github.com/danmwallace/ansible-collection-azure) | 1.0.1 | Galaxy | `azure_arc` |
-| [`danmwallace.private`](https://github.com/danmwallace/ansible-collection-private) | 1.0.2 | GitHub only | `portfolio`, `vday`, `wsb` |
 | [`danmwallace.ubuntu`](https://github.com/danmwallace/ansible-collection-ubuntu) | 1.0.0 | GitHub only | _none yet_ |
 
 Roles are addressed by FQCN — `danmwallace.<collection>.<role>` (for example
@@ -33,8 +32,6 @@ Roles are addressed by FQCN — `danmwallace.<collection>.<role>` (for example
 - **`danmwallace.fedora`** — Fedora workstation / atomic-variant configuration
   (Hyprland, etc.).
 - **`danmwallace.azure`** — Azure Arc and related cloud-native integrations.
-- **`danmwallace.private`** — personal/private homelab roles (not published to
-  Galaxy).
 - **`danmwallace.ubuntu`** — Ubuntu-specific configuration; publishing is deferred
   until it carries roles.
 
@@ -47,8 +44,7 @@ ansible-galaxy collection install danmwallace.docker
 ```
 
 To pin everything in a project, use a `requirements.yml`. The Galaxy collections
-pin by version; the GitHub-only ones (`private`, `ubuntu`) install from their git
-source:
+pin by version; the GitHub-only `ubuntu` collection installs from its git source:
 
 ```yaml
 collections:
@@ -60,7 +56,7 @@ collections:
     version: ">=1.0.1"
   - name: danmwallace.azure
     version: ">=1.0.1"
-  - name: https://github.com/danmwallace/ansible-collection-private.git
+  - name: https://github.com/danmwallace/ansible-collection-ubuntu.git
     type: git
     version: main
 ```
